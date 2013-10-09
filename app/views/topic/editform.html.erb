@@ -1,0 +1,14 @@
+<h1>编辑专题</h1>
+<strong style="color:green">
+  <% if flash[:update] %>
+  <%=flash[:update]%>
+  <%end%>
+</strong>
+<% @id=@topic.id %>
+<% form_for :topic,:url=>{:action=>"edit",:id=>@id},:html=>{:multipart=>"true"} do |f| %>
+专题名称:<%=f.text_field("topicname")%><br/><br/>
+专题细节:<br/>
+        <%=f.text_area "topicdetails",:rows=>25,:cols=>30%><br/><br/>
+专题图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

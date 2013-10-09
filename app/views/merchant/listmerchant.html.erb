@@ -1,0 +1,17 @@
+<h1>招商列表</h1>
+<%= stylesheet_link_tag 'listprovision' %>
+<table style="border-color: blue;border: solid blue">
+  <tr>
+    <th>招商图片</th>
+    <th>招商细节</th>
+    <th>联系方式</th>
+  </tr>
+  <% @merchant.each do |p| %>
+  <tr>
+    <td><img src="<%=url_for :action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" /></td>
+    <td></td>
+    <td><%=p.title%></td>
+    <td><%=p.merchantdetails%></td>
+    <td><%=p.contactme%>|<%=link_to "删出招商",:action=>"delete",:id=>p.id%>|<%=link_to "编辑招商",:action=>"editform",:id=>p.id%></td></tr>
+  <%end%>
+</table>

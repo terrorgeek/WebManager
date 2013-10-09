@@ -1,0 +1,15 @@
+<h1>添加公司</h1>
+<strong style="color:green">
+  <% if flash[:add] %>
+  <%=flash[:add]%>
+  <%end%>
+</strong>
+<% form_for :company,:url=>{:action=>"add"},:html=>{:multipart=>"true"} do |f| %>
+公司名称:<%=f.text_field("companyname")%><br/><br/>
+所在地:<%=select_tag "city","<option>北京</option><option>上海</option><option>深圳</option><option>天津</option><option>香港</option><option>澳门</option><option>哈尔滨</option>"%><br/><br/>
+注册年份:<%=f.text_field("logindate")%><br/><br/>
+资本:<%=f.text_field("stock")%><br/><br/>
+详细信息:<br/>
+        <%=f.text_area "companydetails",:rows=>15,:cols=>80%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

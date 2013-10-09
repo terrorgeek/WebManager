@@ -1,0 +1,12 @@
+<h1>供应页面定制</h1>
+<% form_for :allcss,:url=>{:action=>"update_provision"} do |f| %>
+距离页面左边距(margin-left):<%=f.text_field :margin_left%><br/><br/>
+距离页面顶部距离(margin-top):<%=f.text_field :margin_top%><br/><br/>
+是否可托拽:是<%=f.radio_button(:draggable,"yes")%>---否<%=f.radio_button(:draggable,"no")%><br/><br/>
+最多显示条目数:<%=f.text_field :max_row%><br/><br/>
+是否显示图像:是<%=f.radio_button(:picture,"yes")%>---否<%=f.radio_button(:picture,"no")%><br/><br/>
+<!--最多显示评论数:<%#=f.text_field :max_comment%><br/><br/>-->
+是否有底页(footer):是<%=f.radio_button(:footer,"yes")%>---否<%=f.radio_button(:footer,"no")%><br/><br/>
+显示广告数量:<%=f.text_field :advertise_number%><br/><br/>
+<%=submit_tag "submit"%>
+<%end%>

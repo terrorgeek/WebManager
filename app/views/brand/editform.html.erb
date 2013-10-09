@@ -1,0 +1,15 @@
+<h1>编辑商品</h1>
+<strong style="color:green">
+  <% if flash[:update] %>
+  <%=flash[:update]%>
+  <%end%>
+</strong>
+<% @id=@brand.id %>
+<% form_for :brand,:url=>{:action=>"edit",:id=>@id},:html=>{:multipart=>"true"} do |f| %>
+品牌名称:<%=f.text_field("brandname")%><br/><br/>
+品牌细节:<br/>
+        <%=f.text_area "branddetails",:rows=>25,:cols=>30%><br/><br/>
+品牌logo:<%=f.file_field("uploaded_picture")%><br/><br/>
+官方网站:<%=f.text_field("brandsite")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

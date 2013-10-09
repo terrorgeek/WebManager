@@ -1,0 +1,14 @@
+<div style="color: white">
+<h1>所有的评论</h1>
+<% @comment.each do |c| %>
+<% @visitor=Visitor.find_by_id(c.visitor_id) %>
+<% @customuser=Customuser.find_by_id(c.customuser_id) %>
+<% if !@visitor.nil? %>
+用户：<%=@visitor.username%>
+<%end%>
+<% if !@customuser.nil? %>
+用户：<%=@customuser.username%>
+<%end%>
+说：<%=c.body%><%=button_to "删除此留言",:action=>"delete_comment",:id=>c%><br/>
+<%end%>
+</div>

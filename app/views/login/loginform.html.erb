@@ -1,0 +1,11 @@
+<center><h1>登陆</h1>
+<fieldset style="background-color: yellow;width: 300px;">
+<% form_tag :action=>"login" do %>
+用户名：<%=text_field_tag "username"%><br/><br/>
+
+密  码: <%=text_field_tag "password"%><br/>
+<%=submit_tag "submit"%>
+<%end%><br/><br/>
+<%=button_to "公司会员注册",:action=>"registerform2"%><%=button_to "访客注册", :action=>"registerform"%></fieldset>
+<br/></center>
+

@@ -1,0 +1,25 @@
+<h1>页面细节定制</h1>
+<% if flash[:update] %>
+<div id="div1" style="height: 50px;width:150px;background-color: green;margin-left: 300px;margin-top: 40px"><%=flash[:update]%></div>
+<%end%>
+<% form_tag :action=>"disposepagedetails",:method=>"post" do %>
+首页行情速递数量:<%=text_field_tag "current_number"%><br></br>
+首页供求信息数量:<%=text_field_tag "reqpro_number"%><br></br>
+首页产品数量:    <%=text_field_tag "product_number"%><br></br>
+首页品牌展示数量:<%=text_field_tag "boarddisplay_number"%><br></br>
+首页行业展会数量:<%=text_field_tag "exhibition_number"%><br></br>
+首页图片中心数量:<%=text_field_tag "pictrue_number"%><br></br>
+首页视频推荐数量:<%=text_field_tag "video_number"%><br></br>
+首页最新资讯数量:<%=text_field_tag "query_number"%><br></br>
+首页最新专题数量:<%=text_field_tag "topic_number"%><br></br>
+首页最新企业数量:<%=text_field_tag "firm_number"%><br></br>
+首页企业新闻数量:<%=text_field_tag "firm_news__number"%><br></br>
+首页行情报价数量:<%=text_field_tag "current_price_number"%><br></br>
+首页招商代理数量:<%=text_field_tag "merchants_deputy"%><br></br>
+首页招聘求职数量:<%=text_field_tag "jobhunter_number"%><br></br>
+首页行业知道数量:<%=text_field_tag "info_number"%><br></br>
+首页资料下载数量:<%=text_field_tag "download_number"%><br></br>
+首页图片链接数量:<%=text_field_tag "image_link_number"%><br></br>
+首页文字链接数量:<%=text_field_tag "word_link_number"%><br></br>
+<%=submit_tag "确定",:confirm=>"Are you sure?" %>
+<%end%>

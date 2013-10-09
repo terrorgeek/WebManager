@@ -1,0 +1,13 @@
+<h1>添加专题</h1>
+<strong style="color:green">
+  <% if flash[:add] %>
+  <%=flash[:add]%>
+  <%end%>
+</strong>
+<% form_for :topic,:url=>{:action=>"add"},:html=>{:multipart=>"true"} do |f| %>
+专题名称:<%=f.text_field("topicname")%><br/><br/>
+专题细节:<br/>
+        <%=f.text_area "topicdetails",:rows=>15,:cols=>80%><br/><br/>
+专题图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

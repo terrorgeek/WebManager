@@ -1,0 +1,16 @@
+<h1>编辑招商</h1>
+<strong style="color:green">
+  <% if flash[:update] %>
+  <%=flash[:update]%>
+  <%end%>
+</strong>
+<% @id=@merchant.id %>
+<% form_for :merchant,:url=>{:action=>"edit",:id=>@id},:html=>{:multipart=>"true"} do |f| %>
+
+招商标题:<%=f.text_field("title")%><br/><br/>
+招商细节:<br/>
+        <%=f.text_area "merchantdetails",:rows=>25,:cols=>30%><br/><br/>
+招商图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+联系人:<%=f.text_field("contactme")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

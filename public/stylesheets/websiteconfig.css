@@ -1,0 +1,25 @@
+/* 
+    Document   : websiteconfig
+    Created on : 2011-1-23, 13:06:27
+    Author     : sy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+#div1
+{
+    width: 100px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: 10px;
+    background-color: yellow;
+}
+

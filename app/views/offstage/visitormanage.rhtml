@@ -1,0 +1,6 @@
+<div id="div1" style="width: 300pz;height: 1000px;border-style: solid;border: 1px">
+  <span><strong>访客列表</strong></span><br/>
+  <% @visitor.each do |v| %>
+  姓名:<%=v.username%><%=link_to "删除",:action=>"delete_visitor",:sb=>v%><br/>
+  <%end%>
+</div>

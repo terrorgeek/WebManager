@@ -1,0 +1,5 @@
+<%=stylesheet_link_tag "style1"%>
+<h1>Job#listjob</h1>
+<% @job.each do |j| %>
+职位：<%=j.jobduty%>|状态：<%=j.status%>|<%=link_to "删除",:action=>"delete_job",:id=>j%><br/>
+<%end%><br/>

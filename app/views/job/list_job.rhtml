@@ -1,0 +1,4 @@
+<h1>Job#listjob</h1>
+<% @job.each do |j| %>
+职位：<%=j.jobduty%>|<%=j.status%>|<%=link_to "通过",:action=>"check",:id=>j%>|<%=link_to "不通过",:action=>"uncheck",:id=>j%><br/>
+<%end%>

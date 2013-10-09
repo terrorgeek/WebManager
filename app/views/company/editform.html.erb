@@ -1,0 +1,16 @@
+<h1>编辑商品</h1>
+<strong style="color:green">
+  <% if flash[:update] %>
+  <%=flash[:update]%>
+  <%end%>
+</strong>
+<% @id=@company.id %>
+<% form_for :company,:url=>{:action=>"edit",:id=>@id},:html=>{:multipart=>"true"} do |f| %>
+公司名称:<%=f.text_field("companyname")%><br/><br/>
+所在地:<%=select_tag "city","<option>北京</option><option>上海</option><option>深圳</option><option>天津</option><option>香港</option><option>澳门</option><option>哈尔滨</option>"%><br/><br/>
+注册年份:<%=f.text_field("logindate")%><br/><br/>
+资本:<%=f.text_field("stock")%><br/><br/>
+公司详情:<br/>
+        <%=f.text_area "companydetails",:rows=>25,:cols=>30%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

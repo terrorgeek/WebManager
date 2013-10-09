@@ -1,0 +1,38 @@
+<%=javascript_include_tag "jquery.ui.dialog"%>
+
+<script>
+   $(document).ready(function() {
+     $("#footer_version").click(function(){
+         $("#version").dialog();
+         $("#version").css({visibility:"visible"});
+    });
+    $("#footer_phone").click(function(){
+      $("#phone").dialog();
+      $("#phone").css({visibility:"visible"});
+    });
+    $("#footer_message").click(function(){
+      $("#message").dialog();
+      $("#message").css({visibility:"visible"});
+    });
+  });
+</script>
+<div id="div1" style="width: 500px;height:60px;border-style: solid;border: 1px;border-color:#F6921E;color: white">
+  <button href="http://localhost:3000/display">网站首页</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="footer_version">版权信息</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="footer_phone">客服电话</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="footer_message">网站留言</button>
+</div>
+<div id="version" title="版权信息" style="visibility:hidden">
+  <%=@footer_version.webcopyrights%>
+</div>
+<div id="phone" title="客服电话" style="visibility:hidden">
+  <%=@footer_version.webphone%>
+</div>
+<div id="message" title="网站留言" style="visibility:hidden">
+    <% form_for :systemmessage,:url=>{:action=>"add_system_message"} do |f| %>
+  用户名：<%=f.text_field("username")%><br/><br/>
+  留言内容：<%=f.text_field("body")%><br/><br/>
+    <%=submit_tag "submit"%>
+  <%end%>
+</div>
+

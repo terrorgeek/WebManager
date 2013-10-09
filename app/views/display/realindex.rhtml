@@ -1,0 +1,105 @@
+                
+                <%=stylesheet_link_tag "display"%>
+                <%=stylesheet_link_tag "jquery-ui-1.8.9.custom.css"%>
+                <%=javascript_include_tag "jquery-1.4.4.min"%>
+                <%=javascript_include_tag "jquery-ui-1.8.9.custom.min"%>
+                <%=javascript_include_tag "jquery.ui.tabs"%>
+                <%=javascript_include_tag "jquery.ui.dialog"%>
+                <%=javascript_include_tag "jquery.ui.draggable"%>
+                <%=javascript_include_tag "jquery.ui.button"%>
+                
+<script type="text/javascript">
+                  
+
+			 $(document).ready(function() {
+                      $("#tabs").tabs();
+                           });
+                            $(document).ready(function() {
+                      $("button").button();
+                      $("#button1").click(function(){
+                          window.location.href="http://localhost:3000/buything/buythingform";
+                      });
+                       $("#button2").click(function(){
+                          window.location.href="http://localhost:3000/show/showform";
+                      });
+                       $("#button3").click(function(){
+                          window.location.href="http://localhost:3000/job/jobform";
+                      });
+                           });
+		</script>
+		<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+		</style>
+<div style="font-size:15px;">
+  <% if @definition_display.provision=="yes" %>
+                  <div id="provision1"><center><span>供应信息</span></center><br/><% unless @provision.nil? %>
+      <% @provision.each do |p| %>
+        <%=p.provisionname%><br/>
+      <%end%>
+        <% if @definition_display.provision_drag=="yes" %>
+        <%=javascript_include_tag :defaults %>
+          <%=draggable_element("provision1")%>
+     <%end%>
+        <%end%>
+     </div>
+  <%end%>
+
+  <% if @definition_display.buy=="yes" %>
+      <div id="buy1"><center><span>求购信息</span></center><br/><% unless @buy.nil? %>
+      <% @buy.each do |p| %>
+        <%=p.buyname%><br/>
+      <%end%>
+        <% if @definition_display.buy_drag=="yes" %>
+        <%=javascript_include_tag :defaults %>
+          <%=draggable_element("buy1")%>
+     <%end%>
+        <%end%>
+      </div>
+  <%end%>
+
+  <% if @definition_display.brand=="yes" %>
+ <div id="brand1"><center><span>品牌展示</span></center><br/><% unless @brand.nil? %>
+      <% @brand.each do |p| %>
+        <img src="<%=url_for :controller=>"brand",:action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=p.brandname%><br/>
+      <%end%>
+        <% if @definition_display.brand_drag=="yes" %>
+        <%=javascript_include_tag :defaults %>
+          <%=draggable_element("brand1")%>
+     <%end%>
+        <%end%>
+             </div>
+              <%end%>
+
+  <% if @definition_display.show=="yes" %>
+<div id="show1"><center><span>行业展会</span></center><br/><% unless @show.nil? %>
+      <% @show.each do |p| %>
+        <%=p.showtitle%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=p.showcity%><br/>
+      <%end%>
+        <% if @definition_display.show_drag=="yes" %>
+        <%=javascript_include_tag :defaults %>
+          <%=draggable_element("show1")%>
+     <%end%>
+        <%end%>
+</div><%end%>
+
+  <% if @definition_display.job=="yes" %>
+ <div id="job1"><center><span>招聘信息</span></center><br/><% unless @job.nil? %>
+      <% @job.each do |p| %>
+        <% if p.status=="pass" %>
+        <%=p.jobtitle%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=p.jobduty%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=p.amount%>
+        <%end%><br/>
+      <%end%>
+        <% if @definition_display.job_drag=="yes" %>
+        <%=javascript_include_tag :defaults %>
+          <%=draggable_element("job1")%>
+     <%end%>
+        <%end%>
+      </div><%end%>
+</div><%=render :partial=>"additional_add"%>

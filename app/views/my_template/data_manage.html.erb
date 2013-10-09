@@ -1,0 +1,5 @@
+请输入您的SQL语句:<strong style="color: green"><%=flash[:success]%></strong>
+<strong style="color: red"><%=flash[:error]%></strong>
+<% form_tag :action=>"exe_sql" do %>
+SQL：<%=text_area "sql",""%><br/>
+<%end%>

@@ -1,0 +1,13 @@
+<%=stylesheet_link_tag "style1"%>
+<div class="m">
+<div class="menu" id="menu">
+	<ul>
+	        <li class="menu_li"><a href=""><span><%=link_to "公司首页" ,:action=>"company_template"%></span></a></li>
+		<li class="menu_li"><a href=""><span><%=link_to "员工列表" ,:action=>"company_staff"%></span></a></li>
+		<li class="menu_li"><a href=""><span><%=link_to "我们的展会" ,:action=>"company_show"%></span></a></li>
+		<li class="menu_li"><a href=""><span><%=link_to "公司招聘" ,:action=>"company_job"%></span></a></li>
+		<li class="menu_li"><a href=""><span>联系我们</span></a></li>
+		</ul>
+</div>
+</div>
+<%=yield%>

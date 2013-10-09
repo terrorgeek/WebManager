@@ -1,0 +1,7 @@
+<%=javascript_include_tag "prototype"%>
+<div id="div1" style="background-color: yellow;height: 80px;width: 300px;margin-left: 500px;margin-top: 200px">
+<% form_tag :action=>"edit",:id=>@m.id do %>
+新模块名：<%=text_field_tag "mymodule",@m.modulename%><br/>
+<%=submit_tag "submit"%>
+<%end%>
+</div>

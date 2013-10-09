@@ -1,0 +1,17 @@
+<h1>公司列表</h1>
+<%= stylesheet_link_tag 'listprovision' %>
+<table style="border-color: blue;border: solid blue">
+  <tr>
+    <th>公司名称</th>
+    <th>所在地</th>
+    <th>注册年份</th>
+    <th>资本</th>
+  </tr>
+  <% @company.each do |p| %>
+  <tr>
+    <td><%=p.companyname%></td>
+    <td><%=p.city%></td>
+    <td><%=p.logindate%></td>
+    <td><%=p.stock%>|<%=link_to "删除公司",:action=>"delete",:id=>p.id%>|<%=link_to "编辑公司",:action=>"editform",:id=>p.id%></td></tr>
+  <%end%>
+</table>

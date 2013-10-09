@@ -1,0 +1,13 @@
+<h1>修改管理员信息</h1>
+<% @temp=@editmanager.id %>
+<% @username=@editmanager.username %>
+<% @password=@editmanager.password %>
+<% @realname=@editmanager.realname %>
+<% @type=@editmanager.managertype %>
+<% form_tag :action=>"realdispose",:id=>@temp do %>
+用户名：<%=text_field_tag "username",@username%><br></br><br></br>
+密  码：<%=text_field_tag "password",@password%><br></br><br></br>
+真实性名： <%=text_field_tag "realname",@realname%><br></br><br></br>
+管理员类型：<%=text_field_tag "managertype",@type%><br></br><br></br>
+  <%=submit_tag "submit",:confirm=>"Are you sure?"%>
+<%end%>

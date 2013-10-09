@@ -1,0 +1,7 @@
+<h1>求购列表</h1>
+<% @buy.each do |b| %>
+<fieldset>
+求购标题:<%=b.buytitle%><br/><br/>
+求购名称:<%=b.buyname%><br/><br/>
+审核:<%=b.status%>|<%=link_to "通过",:action=>"check",:id=>b%>|<%=link_to "不通过",:action=>"check2",:id=>b%></fieldset><br/><br/>
+<%end%>

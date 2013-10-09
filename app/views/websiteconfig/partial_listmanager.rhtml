@@ -1,0 +1,9 @@
+<fieldset>
+<% @manager.each do |manager| %>
+  <%=manager.username%>|
+  <%=manager.realname%>|
+  <%=manager.managertype%><br></br><br></br>
+  <%end%><br></br><br></br>
+</fieldset>
+
+  <%=link_to "返回",:action=>"managermanagement"%>

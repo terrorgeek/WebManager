@@ -1,0 +1,14 @@
+<center><h1>访客注册</h1>
+<fieldset style="background-color: yellow;width: 300px;">
+<div style="border: 1px;border-color: green;width: 300px;height:300px">
+<% form_tag :action=>"adduser" do %>
+用户名:<%=text_field_tag "username"%><br/><br/>
+密  码:<%=text_field_tag "password"%><br/><br/>
+年  龄:<%=text_field_tag "age"%><br/><br/>
+性  别:<%=text_field_tag "gender"%><br/><br/>
+QQ号码:<%=text_field_tag "qq"%><br/><br/>
+手机号:<%=text_field_tag "cellphone"%><br/><br/>
+<%=submit_tag "submit"%>
+<%end%>
+</div>
+  </fieldset></center>

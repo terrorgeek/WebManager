@@ -1,0 +1,14 @@
+<%=stylesheet_link_tag "style1"%>
+<div class="m">
+<div class="menu" id="menu">
+	<ul>
+	        <li class="menu_li"><a href=""><span><%=link_to "网站基本设置" ,:action=>"baseconfig"%></span></a></li>
+
+		<li class="menu_li"><a href=""><span><%=link_to "模块管理" ,:action=>"modulemanagement"%></span></a></li>
+
+		<li class="menu_li"><a href=""><span><%=link_to "页面细节" ,:action=>"pagedetails"%></span></a></li>
+
+		</ul>
+</div>
+</div>
+<div style="margin-left: 200px;margin-top: 200px;"><%=yield%></div>

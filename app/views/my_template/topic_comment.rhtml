@@ -1,0 +1,5 @@
+<h1>全站所有评论</h1>
+<strong style="color: green"><%=flash[:success]%></strong>
+<%@comment.each do |c|%>
+评论:<%=c.body%>-----创建时间:<%=c.created_at%>---<%=button_to "删除留言", :action=>"delete_comment",:id=>c%><br/>
+<%end%>

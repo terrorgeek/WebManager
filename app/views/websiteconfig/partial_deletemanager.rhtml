@@ -1,0 +1,10 @@
+<fieldset>
+<% if flash[:delete] %>
+<div id="div1" style="height: 50px;width:150px;background-color: green;margin-left: 300px;margin-top: 40px"><%=flash[:delete]%></div>
+<%end%>
+<% @manager.each do |manager| %>
+  <%=manager.username%><br></br>
+  <%=manager.managertype%>|<%=link_to "删除",:action=>"dispose_partial_deletemanager",:id=>manager%>|<%=link_to "修改",:action=>"dispose_partial_editmanager",:id=>manager%><br></br>
+<%end%><br></br><br></br>
+</fieldset>
+<%=link_to "返回",:action=>"managermanagement"%>

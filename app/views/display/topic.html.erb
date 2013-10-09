@@ -1,0 +1,10 @@
+<%=stylesheet_link_tag "display"%>
+<%=javascript_include_tag "prototype"%>
+<div id="topic1" style="margin-left: <%=@allcss.margin_left%>px;margin-top:<%=@allcss.margin_top%>px"><center><span>专题</span></center><br/><% unless @topic.nil? %>
+      <% @topic.each do |p| %>
+        <%=p.topicname%><br/>
+        <%=p.topicdetails[0...30]%>|<%=link_to_remote  "查看详细信息", :url => {:action =>"topicdetails",:id => p },:update=>"div1"%><br/>
+      <%end%>
+        <%end%>
+</div>
+<div id="div1"></div>

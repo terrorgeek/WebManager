@@ -1,0 +1,21 @@
+/* 
+    Document   : listprovision
+    Created on : 2011-2-13, 16:30:18
+    Author     : sy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+td
+{
+    border: solid blueviolet;
+}
+

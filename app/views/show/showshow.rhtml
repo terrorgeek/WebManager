@@ -1,0 +1,10 @@
+<fieldset>
+<img src="<%=url_for :action=>"picture",:id=>@show.id%>" style="height: 250px;width: 350px" /><br/>
+展会标题：<%=@show.showtitle%><br/><br/>
+城    市:<%=@show.showcity%><br/><br/>
+起止时间:从<%=@show.datefrom%>到<%=@show.dateto%><br/><br/>
+展    馆:<%=@show.mansionname%><br/><br/>
+详细信息:<%=@show.showdetails%><br/><br/>
+联系方式:<%=@show.contactus%><br/><br/>
+主办公司:<%=@company.companyname%>
+</fieldset>

@@ -1,0 +1,2 @@
+module MyTemplateHelper
+end

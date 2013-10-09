@@ -1,0 +1,2 @@
+module OffstageHelper
+end

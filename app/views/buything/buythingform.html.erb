@@ -1,0 +1,7 @@
+<h1>添加求购信息</h1>
+<% form_for :buything,:url=>{:action=>"add"} do |f|%>
+求购产品标题:<%=f.text_field "buytitle"%><br/><br/>
+求购产品名称:<%=f.text_field "buyname"%><br/><br/>
+求购产品细节:<%=f.text_area "buydetails",:cols=>30,:rows=>15%><br/><br/>
+<%=submit_tag "submit"%><br/>
+<%end%>

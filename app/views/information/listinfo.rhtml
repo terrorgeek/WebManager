@@ -1,0 +1,22 @@
+<h1>资讯列表</h1>
+<%= stylesheet_link_tag 'listprovision' %>
+<% if flash[:add] %>
+<strong><%=flash[:add]%></strong>
+<%end%>
+<table style="border-color: blue;border: solid blue">
+  <tr>
+    <th>资训图片</th>
+    <th>资讯标题</th>
+    <th>资讯内容</th>
+    <th>资讯介绍</th>
+  </tr>
+  <% @list.each do |p| %>
+  <tr>
+    <td><img src="<%=url_for :action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" /></td>
+    <td></td>
+    <td><%=p.title%></td>
+    <td><%=p.infodetails%></td>
+    <td><%=p.infointroduction%>|<%=link_to "删出资讯",:action=>"delete",:id=>p.id%>|<%=link_to "编辑资讯",:action=>"editform",:id=>p.id%></td>
+</tr>
+  <%end%>
+</table>

@@ -1,0 +1,28 @@
+<%=javascript_include_tag :defaults %>
+<h1>首页定制</h1>
+<fieldset style="width: 200px;">
+<div id="form1">
+<% form_for :definitionindex, :url=>{:action=>"update"} do |f| %>
+<strong>请确定以下模块是否显示，显示请打勾！</strong><br/>
+供应:<%=f.check_box(:provision,{:checked=>true},"yes","no")%><br/>
+求购:<%=f.check_box(:buy,{:checked=>true},"yes","no")%><br/>
+品牌:<%=f.check_box(:brand,{:checked=>true},"yes","no")%><br/>
+展会:<%=f.check_box(:show,{:checked=>true},"yes","no")%><br/>
+招聘:<%=f.check_box(:job,{:checked=>true},"yes","no")%><br/>
+招商:<%=f.check_box(:merchant,{:checked=>true},"yes","no")%><br/>
+</div>
+  </fieldset><br/><br/><br/>
+<fieldset  style="margin-left: 300px;width: 200px;margin-top: -190px">
+<div id="form2">
+  <strong>请确定以下模块是否可托拽</strong><br/>
+  供应:是<%=f.radio_button(:provision_drag,"yes")%>---否<%=f.radio_button(:provision_drag,"no")%><br/>
+  求购:是<%=f.radio_button(:buy_drag,"yes")%>---否<%=f.radio_button(:buy_drag,"no")%><br/>
+  品牌:是<%=f.radio_button(:brand_drag,"yes")%>---否<%=f.radio_button(:brand_drag,"no")%><br/>
+  展会:是<%=f.radio_button(:show_drag,"yes")%>---否<%=f.radio_button(:show_drag,"no")%><br/>
+  招聘:是<%=f.radio_button(:job_drag,"yes")%>---否<%=f.radio_button(:job_drag,"no")%><br/>
+  招商:是<%=f.radio_button(:merchant_drag,"yes")%>---否<%=f.radio_button(:merchant_drag,"no")%><br/>
+</div>
+  </fieldset>
+<%=submit_tag "submit"%>
+
+<%end%>

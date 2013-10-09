@@ -1,0 +1,16 @@
+<h1>专题列表</h1>
+<%= stylesheet_link_tag 'listprovision' %>
+<table style="border-color: blue;border: solid blue">
+  <tr>
+    <th>专题图片</th>
+    <th>专题名称</th>
+    <th>专题细节</th>
+  </tr>
+  <% @topic.each do |p| %>
+  <tr>
+    <td><img src="<%=url_for :action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" /></td>
+    <td></td>
+    <td><%=p.topicname%></td>
+    <td><%=p.topicdetails%>|<%=link_to "删出专题",:action=>"delete",:id=>p.id%>|<%=link_to "编辑专题",:action=>"editform",:id=>p.id%></td></tr>
+  <%end%>
+</table>

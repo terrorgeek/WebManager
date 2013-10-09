@@ -1,0 +1,29 @@
+<h1>供应列表</h1>
+<%= stylesheet_link_tag 'listprovision' %>
+<table style="border-color: blue;border: solid blue">
+  <tr>
+    <th>图片</th>
+    <th>产品名称</th>
+    <th>产品标题</th>
+    <th>产品型号</th>
+    <th>产品规格</th>
+    <th>产品品牌</th>
+    <th>产品细节</th>
+  </tr>
+  <% @provision.each do |p| %>
+  <tr>
+    <td><img src="<%=url_for :action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" /></td>
+    <td></td>
+    <td><%=p.provisionname%></td>
+    <td><%=p.provisiontitle%></td>
+    <td><%=p.provisiontype%></td>
+    <td><%=p.provisionstandards%></td>
+    <td><%=p.provisionbrand%></td>
+    <td><%=p.provisiondetails%></td>
+
+    <td><%=p.provisionprice%>|<%=link_to "删出供应",:action=>"delete",:id=>p.id%>|<%=link_to "编辑供应",:action=>"editform",:id=>p.id%></td></tr>
+  <%end%>
+</table>
+
+
+

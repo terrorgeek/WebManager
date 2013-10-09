@@ -1,0 +1,38 @@
+<%=stylesheet_link_tag "display"%>
+<div id="topic1" style="margin-left: 600px;margin-top: -100px">
+  <% if @allcss.picture=="yes" %>
+  <img src="<%=url_for :action=>"topicpicture",:id=>@topicdetail.id%>" style="height: 350px;width: 350px" /><br/>
+  <%end%>
+<%=@topicdetail.topicname%><br/>
+<%=@topicdetail.topicdetails%><br/>
+</div><br/><br/><br/><br/>
+<span style="color:white">已有评论:</span>
+<hr><hr><br/>
+
+<div style="color:white">
+<% for t in @topicdetail.topiccomment %>
+<% @visitor=Visitor.find_by_id(t.visitor_id) %>
+<% @customuser=Customuser.find_by_id(t.customuser_id) %>
+<% if !@visitor.nil? %>
+  用户： <%=@visitor.username%>
+<%end%>
+<% if !@customuser.nil? %>
+  用户： <%=@customuser.username%>
+<%end%>
+  说：<%=t.body%><br/><br/><hr><hr>
+<%end%>
+</div>
+
+<div style="margin-left: 1000px;margin-top: -600px;color: white">
+评论:
+<% if !session[:visitor_topic].nil?||!session[:customer_topic].nil? %>
+<% form_tag :action=>"add_comment",:id=>@topicdetail.id do %>
+请输入您的评论:<%=text_area "body",""%><br/>
+<%=submit_tag "submit"%>
+<%end%>
+<%=button_to "退出系统", :action=>"delete"%>
+<%else%>
+您还没有登录，不能评论！
+<%end%>
+
+</div>

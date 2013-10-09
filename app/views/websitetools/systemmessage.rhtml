@@ -1,0 +1,13 @@
+<h1 style="color: white">所以用户留言</h1>
+<% if @count!=0 %>
+<span style="color:greenyellow">您有<%=@count%>条新留言</span>
+<%end%>
+<div style="color: white">
+<% @systemmessage.each do |s| %>
+<% if s.flag=="notread" %>
+  <strong><%=link_to "新留言",:action=>"read_details",:id=>s%></strong><%=button_to "删除",:action=>"delete_message",:id=>s%><br/>
+<%else%>
+        <%=s.username%>说：<%=s.body[1..10]%>&nbsp;&nbsp;<%=button_to "删除",:action=>"delete_message",:id=>s%><br/>
+<%end%>
+<%end%>
+</div>

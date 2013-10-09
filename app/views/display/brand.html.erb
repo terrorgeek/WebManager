@@ -1,0 +1,13 @@
+<%=stylesheet_link_tag "display"%>
+<div id="brand1" style="margin-left: <%=@allcss.margin_left%>px;margin-top:<%=@allcss.margin_top%>px"><center><span>品牌展示</span></center><br/><% unless @brand.nil? %>
+      <% @brand.each do |p| %>
+  <% if @allcss.picture=="yes" %>
+        <img src="<%=url_for :controller=>"brand",:action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=p.brandname%><br/>
+  <%end%>
+      <%end%>
+        <% if @allcss.draggable=="yes"%>
+        <%=javascript_include_tag :defaults%>
+            <%=draggable_element("brand1")%>
+        <%end%>
+        <%end%>
+</div>

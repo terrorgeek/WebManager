@@ -1,0 +1,18 @@
+<div style="margin-left: 100px;margin-top: 30px"><%= stylesheet_link_tag 'websiteconfig' %>
+<% if flash[:update] %>
+<div id="div1" style="height: 30px;width:150px;background-color: green;margin-left: 300px;margin-top: 40px"><%=flash[:update]%></div>
+<%end%>
+<h1>基本设置</h1>
+<% form_tag :action=>"disposebaseconfig",:method=>"post" do %>
+网站名称：<%=text_field_tag "websitename"%><br></br><br></br>
+网站地址：<%=text_field_tag "websiteurl"%><br></br><br></br>
+网站LOGO：<%=file_field_tag "websitelogo"%><br></br><br></br>
+版权信息：<%=text_field_tag "copyrights"%><br></br><br></br>
+客服电话：<%=text_field_tag "phone"%><br></br><br></br>
+<%=submit_tag "确定",:confirm=>"Are you sure?"%>
+<%end%>
+</div><br/>
+
+
+
+

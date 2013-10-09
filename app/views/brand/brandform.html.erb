@@ -1,0 +1,14 @@
+<h1>添加品牌</h1>
+<strong style="color:green">
+  <% if flash[:add] %>
+  <%=flash[:add]%>
+  <%end%>
+</strong>
+<% form_for :brand,:url=>{:action=>"add"},:html=>{:multipart=>"true"} do |f| %>
+品牌名称:<%=f.text_field("brandname")%><br/><br/>
+官方网站:<%=f.text_field("brandsite")%><br/><br/>
+品牌细节:<br/>
+         <%=f.text_area "branddetails",:rows=>15,:cols=>80%><br/><br/>
+品牌logo:<%=f.file_field("uploaded_picture")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

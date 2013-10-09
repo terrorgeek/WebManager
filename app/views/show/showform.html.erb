@@ -1,0 +1,13 @@
+<h1>添加展会</h1>
+<% form_for :show,:url=>{:action=>"add"},:html=>{:multipart=>"true"} do |f| %>
+展会标题:<%=f.text_field "showtitle"%><br/><br/>
+展会城市:<%=f.text_field "showcity"%><br/><br/>
+展会地址:<%=f.text_field "address"%><br/><br/>
+日期：从:<%=f.text_field "datefrom"%>到:<%=f.text_field "dateto"%><br/><br/>
+展馆名:<%=f.text_field "mansionname"%><br/><br/>
+展会详情:<%=f.text_area "showdetails",:rows=>15,:cols=>30%><br/><br/>
+联系方式:<%=f.text_field "contactus"%><br/><br/>
+相关图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+<%=submit_tag "submit"%><br/>
+<%end%>
+

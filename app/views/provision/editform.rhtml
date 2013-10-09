@@ -1,0 +1,18 @@
+<h1>编辑商品</h1>
+<strong style="color:green">
+  <% if flash[:update] %>
+  <%=flash[:update]%>
+  <%end%>
+</strong>
+<% @id=@provision.id %>
+<% form_for :provision,:url=>{:action=>"edit",:id=>@id},:html=>{:multipart=>"true"} do |f| %>
+产品名称:<%=f.text_field("provisionname")%><br/><br/>
+产品标题:<%=f.text_field("provisiontitle")%><br/><br/>
+产品型号:<%=f.text_field("provisiontype")%><br/><br/>
+产品规格:<%=f.text_field("provisionstandards")%><br/><br/>
+产品品牌:<%=f.text_field("provisionbrand")%><br/><br/>产品细节:<br/>
+        <%=f.text_area "provisiondetails",:rows=>25,:cols=>30%><br/><br/>
+产品图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+产品价格:<%=f.text_field("provisionprice")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

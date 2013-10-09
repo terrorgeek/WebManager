@@ -1,0 +1,19 @@
+<%=javascript_include_tag "prototype"%>
+<strong style="color: red"><%=flash[:big]%><br/><%=flash[:small]%></strong>
+<div id="div2" style="background-color: yellow;height: 80px;width: 300px;margin-left: 500px;">
+  <fieldset>
+  <% form_tag :action=>"addmodule" do %>
+  添加模块名:<%=text_field_tag "modulename"%>
+  <%=submit_tag "submit"%>
+  </fieldset>
+  <%end%>
+</div>
+<% @m.each do |m| %>
+<div style="background-color: green;width: 130px;height: 50px">
+  <%=m.modulename%>
+</div><%=link_to_remote "修改",:url=>{:action=>"updatemodule",:id=>m.id},:update=>"div1" %>|<%=link_to "删除",:action=>"deletemodule",:id=>m.id %><br/>
+<%end%><br/>
+<div id="div1" style="margin-top:-700px"></div>
+
+
+

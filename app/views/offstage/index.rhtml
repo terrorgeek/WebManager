@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>后台管理</title>
+		<link type="text/css" href="css/dark-hive/jquery-ui-1.8.10.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.10.custom.min.js"></script>
+                <%=stylesheet_link_tag "jquery-ui-1.8.10.custom"%>
+                <%=javascript_include_tag "jquery-1.4.5.min"%>
+                <%=javascript_include_tag "jquery-ui-1.8.10.custom.min"%>
+                <%=javascript_include_tag "jquery.ui.accordion_black"%>
+                <%=javascript_include_tag "jquery.ui.button_black"%>
+                <%=javascript_include_tag "jquery.ui.tabs_black"%>
+                <%=stylesheet_link_tag "offstage"%>
+		<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+		</style>
+	</head>
+	<body style="font-size:90%;background-color: black">
+          <script type="text/javascript">
+			$(document).ready(function() {
+                             $("#accordion").accordion();
+                             $("#button1").button();
+                             $("#button2").button();
+                             $("#button3").button();
+                             $("#button4").button();
+                             $("#button5").button();
+                             $("#button6").button();
+                             $("#button7").button();
+                             $("#button8").button();
+                             $("#button9").button();
+                             $("#button10").button();
+                             $("#button11").button();
+                             $("#button12").button();
+                             $("#button13").button();
+                             $("#button14").button();
+                             $("#buttonx").button();
+                             $("#buttony").button();
+                             $("#buttonz").button();
+                             $("#button_def").button();
+                             $("#button_system_message").button();
+                             $("#button_wordfilter").button();
+                          });
+
+                          function onTag(TagName){
+	document.getElementById("baseconfig").style.display = "none";
+	document.getElementById("managermanagement").style.display = "none";
+	document.getElementById("provision").style.display = "none";
+        document.getElementById("buything").style.display = "none";
+        document.getElementById("company").style.display = "none";
+        document.getElementById("show").style.display = "none";
+        document.getElementById("information").style.display = "none";
+        document.getElementById("merchant").style.display = "none";
+        document.getElementById("job").style.display = "none";
+        document.getElementById("topic").style.display = "none";
+        document.getElementById("commentmanage").style.display = "none";
+        document.getElementById("user").style.display = "none";
+
+        document.getElementById("module_manage").style.display = "none";
+        document.getElementById("user_manage").style.display = "none";
+        document.getElementById("data_manage").style.display = "none";
+        document.getElementById("ultra_define").style.display = "none";
+        document.getElementById("systemmessage").style.display = "none";
+        document.getElementById("wordfilter").style.display = "none";
+	document.getElementById(TagName).style.display = "block";
+}
+
+		</script>
+	   <div id="accordion" style="width:200px">
+	<h3><a href="#">系统设置</a></h3>
+	<div>
+          <button id="button1" onclick="onTag('baseconfig');">网站设置</button><br/>
+          <button id="button2" onclick="onTag('managermanagement');">管理员管理</button><br/>
+          <button id="button_def" onclick="onTag('ultra_define');">页面定制</button><br/>
+        <!--  <button id="button3">用户管理</button><br/>   -->
+	</div>
+	<h3><a href="#">系统工具</a></h3>
+	<div>
+            <button id="buttonx" onclick="onTag('module_manage');">模块管理</button><br/>
+            <button id="buttony" onclick="onTag('data_manage');">数据维护</button><br/>
+            <button id="buttonz" onclick="onTag('user_manage');">会员管理</button><br/>
+	</div>
+	<h3><a href="#">功能模块</a></h3>
+	<div>
+          <button id="button4" onclick="onTag('provision');">供应管理</button><br/>
+          <button id="button5" onclick="onTag('buything');">求购管理</button><br/>
+          <button id="button6" onclick="onTag('company');">公司设置</button><br/>
+          <button id="button7" onclick="onTag('show');">展会管理</button><br/>
+          <button id="button8" onclick="onTag('information');">资讯设置</button><br/>
+          <button id="button9" onclick="onTag('merchant');">招商管理</button><br/>
+          <button id="button10" onclick="onTag('job');">人才管理</button><br/>
+       <!--   <button id="button11">知道管理</button><br/>   -->
+          <button id="button12"  onclick="onTag('topic');">专题管理</button><br/>
+	</div>
+	<h3><a href="#">其它管理</a></h3>
+	<div>
+             <button id="button13" onclick="onTag('commentmanage');">评论管理</button><br/>
+             <button id="button14" onclick="onTag('user');">用户管理</button><br/>
+             <button id="button_system_message" onclick="onTag('systemmessage');">留言管理</button><br/>
+             <button id="button_wordfilter" onclick="onTag('wordfilter');">词语过滤</button><br/>
+	</div>
+</div>
+
+          <div id="baseconfig"><iframe src="http://localhost:3000/websiteconfig/baseconfig" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="managermanagement"><iframe src="http://localhost:3000/websiteconfig/partial_listmanager" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="provision" style="display:none;"><iframe src="http://localhost:3000/provision/listprovision" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="buything" style="display:none;"><iframe src="http://localhost:3000/buything/listbuything" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="company" style="display:none;"><iframe src="http://localhost:3000/company/listcompany" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="show" style="display:none;"><iframe src="http://localhost:3000/show/listshow" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="information" style="display:none;"><iframe src="http://localhost:3000/information/listinfo" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="merchant" style="display:none;"><iframe src="http://localhost:3000/merchant/listmerchant" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="job" style="display:none;"><iframe src="http://localhost:3000/job/listjob" width="1300" height="1100" scrolling="no"></iframe></div>
+          <div id="topic" style="display:none;"><iframe src="http://localhost:3000/topic/listtopic" width="1300" height="1100" scrolling="no"></iframe></div>
+           <div id="commentmanage" style="display:none;"><iframe src="http://localhost:3000/offstage/commentmanage" width="1300" height="1100" scrolling="no"></iframe></div>
+           <div id="user" style="display:none;"><iframe src="http://localhost:3000/offstage/usermanage" width="1300" height="1100" scrolling="no"></iframe></div>
+
+           <div id="module_manage" style="display:none;"><iframe src="http://localhost:3000/my_template/module_manage" width="1300" height="1100" scrolling="no"></iframe></div>
+           <div id="user_manage" style="display:none;"><iframe src="http://localhost:3000/my_template/user_manage" width="1300" height="1100" scrolling="no"></iframe></div>
+           <div id="data_manage" style="display:none;"><iframe src="http://localhost:3000/my_template/data_manage" width="1300" height="1100" scrolling="no"></iframe></div>
+
+           <div id="ultra_define" style="display:none;"><iframe src="http://localhost:3000/definition/index" width="1300" height="1100" scrolling="no"></iframe></div>
+           <div id="systemmessage" style="display:none;"><iframe src="http://localhost:3000/websitetools/systemmessage" width="1300" height="1100" scrolling="no"></iframe></div>
+           <div id="wordfilter" style="display:none;"><iframe src="http://localhost:3000/websitetools/wordfilter" width="1300" height="1100" scrolling="no"></iframe></div>
+	  </body>
+</html>

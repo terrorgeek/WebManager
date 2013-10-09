@@ -1,0 +1,18 @@
+<%=stylesheet_link_tag "style1"%>
+<div class="m">
+<div class="menu" id="menu">
+	<ul>
+	        <li class="menu_li"><a href=""><span>词语过滤</span></a></li>
+	</ul>
+</div>
+</div><br/>
+<fieldset style="margin-left: 100px;margin-top: 40px;width: 500px">
+  <% form_tag :action=>"filter" do %>
+  <%=select_tag "module","<option>专题</option><option>求购</option><option>供应</option><option>资讯</option><option>招商</option>
+  <option>展会</option>"%><br/><br/>
+  请输入您要搜索的词语：<%=text_area "filtercore","",:cols=>"30",:rows=>"15"%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  将其替换为：<%=text_area "replace","",:rows=>"15",:cols=>"30"%><br/>
+  <%=submit_tag "submit"%>
+  <%end%>
+</fieldset>
+

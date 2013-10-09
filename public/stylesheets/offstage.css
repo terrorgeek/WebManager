@@ -1,0 +1,58 @@
+/* 
+    Document   : offstage
+    Created on : 2011-3-5, 15:14:37
+    Author     : sy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+#offstage,#baseconfig
+{
+    width:1300px;
+    height:1100px;
+    margin-left: 300px;
+    margin-top: -450px;
+    border-style: solid;
+    border-color: grey;
+}
+
+#managermanagement,#provision,#buything,#company,#show,#information,#merchant
+{
+    width:1300px;
+    height:1100px;
+    margin-left: 300px;
+    margin-top: -450px;
+    border-style: solid;
+    border-color: grey;
+    display: none;
+}
+#job,#topic
+{
+    width:1300px;
+    height:1100px;
+    margin-left: 300px;
+    margin-top: -450px;
+    border-style: solid;
+    border-color: grey;
+    display: none;
+}
+#commentmanage,#user,#module_manage,#user_manage,#data_manage,#ultra_define,#systemmessage,#wordfilter
+{
+    width:1300px;
+    height:1100px;
+    margin-left: 300px;
+    margin-top: -450px;
+    border-style: solid;
+    border-color: grey;
+    display: none;
+}
+

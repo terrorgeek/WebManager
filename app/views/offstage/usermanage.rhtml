@@ -1,0 +1,9 @@
+<%=stylesheet_link_tag "style1"%>
+<div class="side_head" style="width: 100px"><div><span class="f_r"></span><strong>用户列表</strong></div></div>
+<div class="side_body" style="width: 200px">
+<ul>
+  <% @customuser.each do |v| %>
+  <li>姓名:<%=v.username%><%=link_to "删除",:action=>"delete_customuser",:nb=>v%></li>
+  <%end%>
+</ul>
+</div>

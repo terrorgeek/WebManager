@@ -1,0 +1,15 @@
+<h1>编辑资讯</h1>
+<strong style="color:green">
+  <% if flash[:update] %>
+  <%=flash[:update]%>
+  <%end%>
+</strong>
+<% @id=@edit.id %>
+<% form_for :information,:url=>{:action=>"edit",:id=>@id},:html=>{:multipart=>"true"} do |f| %>
+资讯标题:<%=f.text_field("title")%><br/><br/>
+资讯细节:<br/>
+        <%=f.text_area "infodetails",:rows=>25,:cols=>30%><br/><br/>
+资讯图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+资讯简介:<%=f.text_field("infointroduction")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

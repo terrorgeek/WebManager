@@ -1,0 +1,9 @@
+<h1>管理员登录</h1>
+<fieldset>
+<% form_tag :action=>"login" do %>
+ 用户名:<%=text_field_tag "username"%><br/><br/>
+ 密  码:<%=text_field_tag "password"%><br/><br/>
+ 管理员类型:<%=select_tag "managertype","<option>ordinary</option><option>admin</option>"%><br/><br/>
+ <%=submit_tag "submit"%>
+ <%end%>
+</fieldset>

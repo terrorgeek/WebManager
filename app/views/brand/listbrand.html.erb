@@ -1,0 +1,18 @@
+<h1>品牌列表</h1>
+<%= stylesheet_link_tag 'listprovision' %>
+<table style="border-color: blue;border: solid blue">
+  <tr>
+    <th>图片</th>
+    <th>品牌名称</th>
+    <th>官方网站</th>
+    <th>品牌</th>
+  </tr>
+  <% @brand.each do |p| %>
+  <tr>
+    <td><img src="<%=url_for :action=>"picture",:id=>p.id%>" style="height: 50px;width: 50px" /></td>
+    <td></td>
+    <td><%=p.brandname%></td>
+    <td><%=p.brandsite%></td>
+    <td><%=p.branddetails%>|<%=link_to "删出品牌",:action=>"delete",:id=>p.id%>|<%=link_to "编辑品牌",:action=>"editform",:id=>p.id%></td></tr>
+  <%end%>
+</table>

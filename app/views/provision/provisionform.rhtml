@@ -1,0 +1,17 @@
+<h1>添加产品供应</h1>
+<strong style="color:green">
+  <% if flash[:add] %>
+  <%=flash[:add]%>
+  <%end%>
+</strong>
+<% form_for :provision,:url=>{:action=>"addprovision"},:html=>{:multipart=>"true"} do |f| %>
+产品名称:<%=f.text_field("provisionname")%><br/><br/>
+产品标题:<%=f.text_field("provisiontitle")%><br/><br/>
+产品型号:<%=f.text_field("provisiontype")%><br/><br/>
+产品规格:<%=f.text_field("provisionstandards")%><br/><br/>
+产品品牌:<%=f.text_field("provisionbrand")%><br/><br/>产品细节:<br/>
+        <%=f.text_area "provisiondetails",:rows=>15,:cols=>80%><br/><br/>
+产品图片:<%=f.file_field("uploaded_picture")%><br/><br/>
+产品价格:<%=f.text_field("provisionprice")%><br/><br/>
+<%=submit_tag("提交")%>
+<%end%>

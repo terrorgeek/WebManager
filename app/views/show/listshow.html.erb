@@ -1,0 +1,10 @@
+<h1>Show#listshow</h1>
+<% @show.each do |s| %>
+<fieldset>
+<img src="<%=url_for :action=>"picture",:id=>s.id%>" style="height: 50px;width: 50px" />
+展会标题：<%=s.showtitle%><br/><br/>
+联系方式:<%=s.contactus%>|<%=s.status%>|<%=link_to "通过",:action=>"check",:id=>s%>|<%=link_to "不通过",:action=>"check2",:id=>s%><br/><br/>
+<%=button_to "查看展会详情",:action=>"showshow",:id=>s%>
+</fieldset>
+<%end%>
+

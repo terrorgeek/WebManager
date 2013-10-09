@@ -1,0 +1,18 @@
+<h1>Login#registersuccess</h1>
+<p><%=flash[:add]%></p><br/>
+<p><%=flash[:error]%></p>
+<script type="text/javascript">
+  n=5;
+  function time()
+  {
+      n--;
+      obj=document.getElementById("div1");
+      obj.innerHTML=n;
+      if(n==0)
+      {
+        window.location="http://localhost:3000/show/showform";
+      }
+  }
+  setInterval("time()",1000);
+</script>
+<div id="div1">5</div><br/>

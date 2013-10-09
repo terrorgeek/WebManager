@@ -1,0 +1,8 @@
+<h1>添加资讯</h1>
+<%  form_for :information,:url=>{:action=>"add"},:html=>{:multipart=>"true"} do |f|%>
+添加资讯:<%=f.text_field("title")%><br></br>
+资讯图片:<%=f.file_field("uploaded_picture")%><br/>
+资讯详情:<%=f.text_area "infodetails",:rows=>15,:cols=>30%><br/>
+资讯简介:<%=f.text_field("infointroduction")%><br/>
+<%=submit_tag "提交"%>
+<%end%>

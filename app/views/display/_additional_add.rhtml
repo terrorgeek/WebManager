@@ -1,0 +1,28 @@
+<%=javascript_include_tag "jquery.ui.button"%>
+<%=javascript_include_tag "prototype"%>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+                      $("#tabs").tabs();
+                           });
+                            $(document).ready(function() {
+                      $("button").button();
+                      $("#button1").click(function(){
+                          window.location.href="http://localhost:3000/buything/buythingform";
+                      });
+                       $("#button2").click(function(){
+                          window.location.href="http://localhost:3000/show/showform";
+                      });
+                       $("#button3").click(function(){
+                          window.location.href="http://localhost:3000/job/jobform";
+                      });
+                           });
+</script>
+<fieldset id="fieldset1" style="width:400px;height: 300px;margin-left: 800px;margin-top: -900px;position: absolute">
+  <button id="button1" style="height:70px;width: 150px;background-color: #F6921E;border-style: solid;border: 1px" onclick="window.location.href='http://localhost:3000/buything/buythingform'">添加求购</button><br/><br/>
+        <button id="button2" style="height:70px;width: 150px;background-color: #F6921E;border-style: solid;border: 1px" onclick="window.location.href='http://localhost:3000/show/showform'">添加展会</button><br/><br/>
+        <button id="button3" style="height:70px;width: 150px;background-color: #F6921E;border-style: solid;border: 1px" onclick="window.location.href='http://localhost:3000/job/jobform'">添加招聘</button><br/><br/>
+        <%=draggable_element("fieldset1")%>
+      </fieldset>
+
+      

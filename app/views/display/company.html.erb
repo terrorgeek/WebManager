@@ -1,0 +1,12 @@
+<%=stylesheet_link_tag "display"%>
+<div id="company1" style="margin-left: <%=@allcss.margin_left%>px;margin-top:<%=@allcss.margin_top%>px"><center><span>公司信息</span></center><br/><% unless @company.nil? %>
+      <% @company.each do |p| %>
+      <%=link_to p.companyname,:controller=>"companydisplayer",:action=>"company_template",:id=>p%>  -----<%=p.companydetails%><br/>
+      <%end%>
+      <% if @allcss.draggable=="yes"%>
+      <%=javascript_include_tag :defaults%>
+            <%=draggable_element("company1")%>
+        <%end%>
+        <%end%>
+      </div>
+

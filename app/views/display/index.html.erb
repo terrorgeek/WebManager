@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Rails建站系统</title>
+		<link type="text/css" href="yellow/css/ui-darkness/jquery-ui-1.8.9.custom.css" rel="stylesheet" />
+                <%=stylesheet_link_tag "display"%>
+                <%=stylesheet_link_tag "jquery-ui-1.8.9.custom.css"%>
+                <%=javascript_include_tag "jquery-1.4.4.min"%>
+                <%=javascript_include_tag "jquery-ui-1.8.9.custom.min"%>
+                <%=javascript_include_tag "jquery.ui.tabs"%>
+                <%=javascript_include_tag "jquery.ui.dialog"%>
+                <%=javascript_include_tag "jquery.ui.draggable"%>
+                <%=javascript_include_tag "jquery.ui.button"%>
+		<script type="text/javascript" src="yellow/js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="yellow/js/jquery-ui-1.8.9.custom.min.js"></script>
+		<script type="text/javascript">
+                   $(document).ready(function() {
+                     $("#button1").click(function(){
+                        window.location="http://localhost:3000/buything/buythingform";
+                     });
+                     $("#button2").click(function(){
+                        window.location="http://localhost:3000/show/showform";
+                     });
+                     $("#button3").click(function(){
+                        window.location="http://localhost:3000/job/jobform";
+                     });
+                           });
+
+			 $(document).ready(function() {
+                      $("#tabs").tabs();
+                           });
+                            $(document).ready(function() {
+                      $("button").button();
+                           });
+
+                           function onTag(TagName){
+        document.getElementById("provision").style.display = "none";
+        document.getElementById("realindex").style.display = "none";
+        document.getElementById("buything").style.display = "none";
+        document.getElementById("company").style.display = "none";
+        document.getElementById("show").style.display = "none";
+        document.getElementById("information").style.display = "none";
+        document.getElementById("merchant").style.display = "none";
+        document.getElementById("job").style.display = "none";
+        document.getElementById("topic").style.display = "none";
+        document.getElementById("brand").style.display = "none";
+	document.getElementById(TagName).style.display = "block";
+                           }
+		</script>
+		<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;background-color: black;}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+		</style>
+	</head>
+	<body  style="font-size:90%;">
+            <div id="tabs">
+    <ul>
+        <li><a id="a1" href="#realindex" onclick="onTag('realindex');"><span>首页</span></a></li>
+        <% unless @provision_module.nil? %>
+        <li><a id="a2" href="#provision" onclick="onTag('provision');"><span>供应</span></a></li>
+        <%end%>
+        <% unless @buy_module.nil? %>
+        <li><a id="a3" href="#buy" onclick="onTag('buything');"><span>求购</span></a></li>
+        <%end%>
+        <% unless @company_module.nil? %>
+        <li><a id="a4" href="#company" onclick="onTag('company');"><span>公司</span></a></li>
+        <%end%>
+        <% unless @show_module.nil? %>
+        <li><a id="a5" href="#show" onclick="onTag('show');"><span>展会</span></a></li>
+        <%end%>
+        <% unless @information_module.nil? %>
+        <li><a id="a6" href="#information" onclick="onTag('information');"><span>资讯</span></a></li>
+        <%end%>
+        <% unless @merchant_module.nil? %>
+        <li><a id="a7" href="#merchant" onclick="onTag('merchant');"><span>招商</span></a></li>
+        <%end%>
+        <% unless @brand_module.nil? %>
+        <li><a id="a8" href="#brand" onclick="onTag('brand');"><span>品牌</span></a></li>
+        <%end%>
+        <% unless @job_module.nil? %>
+        <li><a id="a9" href="#job" onclick="onTag('job');"><span>人才</span></a></li>
+        <%end%>
+        <% unless @topic_module.nil? %>
+        <li><a id="a10" href="#topic" onclick="onTag('topic');"><span>专题</span></a></li>
+        <%end%>
+     
+    </ul>
+    <div id="display" >
+
+      </div>
+          <div id="realindex"><iframe src="http://localhost:3000/display/realindex" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="provision" style="display:none;"><iframe src="http://localhost:3000/display/provision" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="buything" style="display:none;"><iframe src="http://localhost:3000/display/buy" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="company" style="display:none;"><iframe src="http://localhost:3000/display/company" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="show" style="display:none;"><iframe src="http://localhost:3000/display/show" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="information" style="display:none;"><iframe src="http://localhost:3000/display/information" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="merchant" style="display:none;"><iframe src="http://localhost:3000/display/merchant" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="brand" style="display:none;"><iframe src="http://localhost:3000/display/brand" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="job" style="display:none;"><iframe src="http://localhost:3000/display/job" width="1750" height="1100" scrolling="no"></iframe></div>
+          <div id="topic" style="display:none;"><iframe src="http://localhost:3000/display/topic" width="1750" height="1100" scrolling="no"></iframe></div>
+      
+    </div><br/>
+           <%=render :partial=>"footer"%>
+	</body>
+</html>
+
+
+

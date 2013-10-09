@@ -1,0 +1,1 @@
+This is a CMS based on Rails. All of development was done by me and this project won "the most creativity prize".

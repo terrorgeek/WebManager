@@ -1,0 +1,19 @@
+<h1>启用模块列表</h1>
+<fieldset style="width: 300px">
+<% @module.each do |m| %>
+  <% if m.status=="passed" %>
+模块:<%=m.id%>-----<%=m.modulename%>---<%=m.updated_at%>---<%=button_to "禁用",:action=>"forbid",:id=>m%><br/>
+<%end%>
+<%end%>
+</fieldset>
+<br/>
+<br/>
+<br/>
+<h2>禁用模块列表</h2>
+<fieldset style="width: 300px">
+<% @module.each do |m| %>
+   <% if m.status=="not passed" %>
+     <%=m.id%>---<%=m.modulename%>---<%=m.updated_at%>---<%=button_to "启用",:action=>"open",:id=>m%><br/>
+  <%end%>
+<%end%>
+ </fieldset>

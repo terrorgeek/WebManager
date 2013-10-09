@@ -1,0 +1,4 @@
+<h1>公司选择</h1>
+<% @company.each do |c| %>
+公司名称:<%=c.companyname%>|<%=link_to "选择",:action=>"adduser2",:id=>c %>
+<%end%>

@@ -1,0 +1,13 @@
+<h1>添加招聘信息</h1>
+<fieldset>
+<% form_for :job,:url=>{:action=>"add"} do |f| %>
+招聘标题:<%=f.text_field("jobtitle")%><br/><br/>
+职    位:<%=f.text_field("jobduty")%><br/><br/>
+招聘人数:<%=f.text_field("amount")%><br/><br/>
+工作地点:<%=f.text_field("jobcity")%><br/><br/>
+学历要求:<%=f.text_field("degree")%><br/><br/>
+联系方式:<%=f.text_field("contactus")%><br/><br/>
+招聘详情:<%=f.text_area "jobdetails",:rows=>15,:cols=>30%><br/><br/>
+<%=submit_tag "submit"%>
+<%end%>
+</fieldset><br/>
